@@ -4,12 +4,16 @@
 
 - Now it can detect nested tags like `#tag/subtag`, also supports find-reference and autocompletion.
 
-> Detecting rule: 
-> - `#` is at the beginning of a line or after a whitespace character.
+> Detecting rule:
+>
+> - `tags:` at the beginning of a line (_ez note: for performance reason and more accurate parsing, less false positive_)
+> - `#` After a whitespace character.
 > - the hashtag path is cut off at a whitespace or a punctuation including `!@#$%^&*()=+.,[];:'"?><`.
 
 > The autocompletion is triggered on both `#` and `/`:
-> - [`#`]: Must be at the beginning of a line or after a whitespace character.
+>
+> - `tags:` at the beginning of a line
+> - [`#`]: After a whitespace character.
 > - [`/`]: Must followed by a hashtags path, like `#tag/subtag/` will be triggered.
 
 ![nested_tags](images/nested_tags.gif)
@@ -32,7 +36,7 @@
 
 ```json
 "markdown-hashtags.sorting.key": "name" // string type, can be set to "countFiles", "countTags", "name". default to "name".
-"markdown-hashtags.sorting.mode": "plain"   // string type, can be set to "plain", "deep". default to "plain". 
+"markdown-hashtags.sorting.mode": "plain"   // string type, can be set to "plain", "deep". default to "plain".
 "markdown-hashtags.file_extensions": [".md", ".markdown"]   // string[] type, the string must start with a dot(.). default to [".md"]
 ```
 
@@ -53,7 +57,7 @@ see the commit
 - [ ] tag move to another nested tag
 - [ ] find-definition command (vscode) to locate specific tag in tag tree
 - [ ] nested tags color
-- [ ] *improve performance
+- [ ] improve performance
 
 ---
 
@@ -65,6 +69,7 @@ The extension provides, what is stands for: `#tag` functionality in markdown fil
 Inspiration comes from [Obsidian.md](https://obsidian.md/), [Markdown Notes](https://marketplace.visualstudio.com/items?itemName=kortina.vscode-markdown-notes) and [Nested Tags](https://marketplace.visualstudio.com/items?itemName=vscode-nested-tags.vscode-nested-tags).
 
 How does this extensions differ from them?
+
 - Markdown Notes provides same hashtag functionality, but also includes [[wiki-links]]. Markdown-hashtags only provides hashtags, so you can combine with different extension, like [Markdown Memo](https://marketplace.visualstudio.com/items?itemName=svsool.markdown-memo).
 - Nested tags put hashtags in html comment and YAML front matter. Markdown-hashtags provides similar experience as hashtags in any social networks.
 
