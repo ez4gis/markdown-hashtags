@@ -26,6 +26,7 @@ type NotesTree = {
 // or at the end of the line, in order to avoid https://github.com/vanadium23/markdown-hashtags/issues/13.
 // Do not forget to use `.trimEnd()` in the code.
 export const hashtagRegexp = /(?<=(^|\s)#)[^\s!@#$%^&*()=+.,\[{\]};:'"?><]+[\s]?/g;
+export const tagsLineRegexp = /^tags:/g;
 
 // use closure to avoid global state which cause
 function _tagTree() {
@@ -146,7 +147,7 @@ async function parseFile(filePath: string, needCheckExts: boolean = true) {
       continue;
     }
 
-    const matches = line.matchAll(hashtagRegexp) || [];
+    const matches = line.match(tagsLineRegexp) && line.matchAll(hashtagRegexp) || [];
     for (const match of matches) {
       const hashtag = match[0].trimEnd();
       const position = new vscode.Position(index, match.index || 0);
