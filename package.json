@@ -1,6 +1,6 @@
 {
-  "name": "markdown-hashtags",
-  "displayName": "markdown-hashtags",
+  "name": "vscode-markdown-hashtags",
+  "displayName": "markdown-hashtags (EZ4GIS Mod)",
   "description": "Hashtags for markdown: autocomplete, tree view and references.",
   "version": "2.0.1",
   "publisher": "vanadium23",
