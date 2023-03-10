@@ -26,7 +26,7 @@ type NotesTree = {
 // or at the end of the line, in order to avoid https://github.com/vanadium23/markdown-hashtags/issues/13.
 // Do not forget to use `.trimEnd()` in the code.
 export const hashtagRegexp = /(?<=(^|\s)#)[^\s!@#$%^&*()=+.,\[{\]};:'"?><]+[\s]?/g;
-export const tagsLineRegexp = /^tags:/g;
+export const tagsLineRegexp = /^[tags:|\[tags\]:]/g;
 
 // use closure to avoid global state which cause
 function _tagTree() {

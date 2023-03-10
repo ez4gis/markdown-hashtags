@@ -6,13 +6,13 @@
 
 > Detecting rule:
 >
-> - `tags:` at the beginning of a line (_ez note: for performance reason and more accurate parsing, less false positive_)
+> - `tags:` or `[tags]:` at the beginning of a line (_ez note: for performance reason and more accurate parsing, less false positive_)
 > - `#` After a whitespace character.
 > - the hashtag path is cut off at a whitespace or a punctuation including `!@#$%^&*()=+.,[];:'"?><`.
 
 > The autocompletion is triggered on both `#` and `/`:
 >
-> - `tags:` at the beginning of a line
+> - `tags:` or `[tags]:` at the beginning of a line
 > - [`#`]: After a whitespace character.
 > - [`/`]: Must followed by a hashtags path, like `#tag/subtag/` will be triggered.
 
